@@ -18,14 +18,13 @@ public class Sorts{
      * @param  list  reference to an array of integers to be sorted
      */
      public void bubbleSort(ArrayList <Integer> list){
-        for (int i =1 ; list.size() < i; i++) { 
-
+        for (int i = 1 ; i < list.size(); i++) { 
             for (int j =0; j < list.size()-i; j ++) {
                 if (list.get(j) > list.get(j+1)) {
                     // exchange elements
                     int temp = list.get(j);  
-                    list.set(list.get(j), list.get(j+1));
-                    temp = list.get(j+1);
+                    list.set(j, list.get(j+1));
+                    list.set(j+1, temp);
                 }
             }
         }
@@ -41,21 +40,21 @@ public class Sorts{
      * @param  list  reference to an array of integers to be sorted
      */
      public void selectionSort(ArrayList <Integer> list){
-        for (int i = 0; i < list.size(); i++) {
-            int pos = i;
+        for (int i = 0; i < list.size() - 1; i++) {
+            int min = i;
             for (int j = i; j < list.size(); j++) {
-                if (list.get(j) < list.get(pos)){
-                    pos = j;
+                if (list.get(j) < list.get(min)){
+                    min = j;
                 }
-                // Swap min (smallest num) to current position on array
-                int min = list.get(pos);
-                list.set(pos, list.get(i));
-                list.set(i, min);
             }
-            System.out.println();
-            System.out.println("Selection Sort");
-            System.out.println();
+            // Swap min (smallest num) to current position on array
+            int temp = list.get(min);
+            list.set(min, list.get(i));
+            list.set(i, temp);
         }
+        System.out.println();
+        System.out.println("Selection Sort");
+        System.out.println();
     }
 
     /**
