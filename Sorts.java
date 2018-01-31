@@ -17,7 +17,7 @@ public class Sorts{
      *
      * @param  list  reference to an array of integers to be sorted
      */
-     public void bubbleSort(ArrayList <Integer> list){
+    public void bubbleSort(ArrayList <Integer> list){
         for (int i = 1 ; i < list.size(); i++) { 
             for (int j =0; j < list.size()-i; j ++) {
                 if (list.get(j) > list.get(j+1)) {
@@ -39,7 +39,7 @@ public class Sorts{
      *
      * @param  list  reference to an array of integers to be sorted
      */
-     public void selectionSort(ArrayList <Integer> list){
+    public void selectionSort(ArrayList <Integer> list){
         for (int i = 0; i < list.size() - 1; i++) {
             int min = i;
             for (int j = i; j < list.size(); j++) {
@@ -80,6 +80,15 @@ public class Sorts{
         System.out.println();
         System.out.println("Insertion Sort");
         System.out.println();
+    }
+
+    public int sequentialSearch(ArrayList <Integer> list, int searchFor){
+        for(int i = 0; i < list.size(); i++){
+            if (list.get(i) == searchFor){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
